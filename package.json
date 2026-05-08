@@ -1,10 +1,9 @@
 {
-  "name": "jon",
+  "name": "falakata-jono-suraksha",
   "version": "1.0.0",
-  "description": "",
-  "main": "jono.js",
+  "description": "Falakata Jono Suraksha Web App",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [],
@@ -13,10 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.6",
-<<<<<<< HEAD
     "dotenv": "^17.4.2",
-=======
->>>>>>> 1b232538aa8066ea8b568ed77578ab162826a7e2
     "express": "^5.2.1",
     "multer": "^2.1.1",
     "mysql2": "^3.22.3",
