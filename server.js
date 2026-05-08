@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const XLSX = require("xlsx");
 const express = require("express");
 const mysql = require("mysql2");
@@ -14,10 +16,11 @@ app.use(express.static(__dirname));
 
 // 🟢 DB CONNECTION
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "735211",
-  database: "falakata_db"
+  host: process.env.MYSQLHOST,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
+  port: process.env.MYSQLPORT
 });
 
 
@@ -50,8 +53,6 @@ app.post("/user-login", (req, res) => {
       console.log(err);
       return res.send("ERROR");
     }
-
-    console.log("DATABASE USERS:", result);
 
     const user = result.find(u =>
       u.member_code == member_code &&
@@ -93,7 +94,7 @@ app.post("/add-case", upload.single("file"), (req, res) => {
   const file = req.file ? req.file.filename : null;
 
 
-  // 🔥 PROFESSIONAL EXCEL SAVE
+  // 🔥 EXCEL SAVE
 
   const excelData = [
     {
@@ -103,8 +104,8 @@ app.post("/add-case", upload.single("file"), (req, res) => {
       "Lead Member": lead_name,
       "Location": location,
       "Date Time": datetime,
-      "Uploaded File": file    
-    }  
+      "Uploaded File": file
+    }
   ];
 
   const excelPath = "cases.xlsx";
@@ -180,8 +181,10 @@ db.connect((err) => {
 
     console.log("✅ DB Connected");
 
-    app.listen(3000, () => {
-      console.log("🚀 Server running on http://localhost:3000");
+    const PORT = process.env.PORT || 3000;
+
+    app.listen(PORT, () => {
+      console.log("🚀 Server running");
     });
 
   }
