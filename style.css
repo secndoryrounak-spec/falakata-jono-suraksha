@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Base styles */
 body {
     margin: 0;
@@ -42,4 +43,50 @@ h1 {
     color: white;
     font-size: 16px;
     cursor: pointer;
+=======
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Home Page Container */
+.home-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.home-container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #fff;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-group button {
+    display: block;
+    margin: 15px auto;
+    padding: 15px;
+    width: 250px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+>>>>>>> 1b232538aa8066ea8b568ed77578ab162826a7e2
     transition: background 0.3s, transform 0.3

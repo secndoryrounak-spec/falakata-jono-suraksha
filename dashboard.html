@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -405,4 +406,413 @@ new Date().toLocaleDateString();
 <script src="dashboard.js"></script>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Falakata Dashboard</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+
+body{
+  background:#0f172a;
+  display:flex;
+  min-height:100vh;
+  overflow-x:hidden;
+  color:white;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+  width:260px;
+  background:#111827;
+  padding:25px;
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.logo h1{
+  font-size:26px;
+  color:#38bdf8;
+}
+
+.logo p{
+  color:#94a3b8;
+  margin-top:5px;
+}
+
+.profile{
+  background:#1e293b;
+  padding:18px;
+  border-radius:16px;
+  margin-bottom:25px;
+}
+
+.profile h3{
+  margin-bottom:8px;
+  font-size:18px;
+}
+
+.profile p{
+  color:#cbd5e1;
+  font-size:14px;
+}
+
+.menu button{
+  width:100%;
+  border:none;
+  padding:14px;
+  margin-top:12px;
+  border-radius:12px;
+  cursor:pointer;
+  background:#1e293b;
+  color:white;
+  text-align:left;
+  font-size:15px;
+  transition:0.3s;
+}
+
+.menu button:hover{
+  background:#2563eb;
+  transform:translateX(5px);
+}
+
+.logout{
+  background:#dc2626 !important;
+}
+
+/* MAIN */
+
+.main{
+  flex:1;
+  padding:25px;
+}
+
+/* TOPBAR */
+
+.topbar{
+  background:#111827;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.topbar h1{
+  font-size:28px;
+}
+
+.topbar span{
+  color:#38bdf8;
+}
+
+/* CARDS */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-bottom:25px;
+}
+
+.card{
+  background:#111827;
+  padding:25px;
+  border-radius:18px;
+  transition:0.3s;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card h3{
+  color:#94a3b8;
+  margin-bottom:10px;
+}
+
+.card p{
+  font-size:32px;
+  font-weight:bold;
+  color:#38bdf8;
+}
+
+/* BOX */
+
+.box{
+  background:#111827;
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:25px;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.box h2{
+  margin-bottom:20px;
+  color:#38bdf8;
+}
+
+/* INPUT */
+
+input,
+select{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  border:none;
+  border-radius:12px;
+  background:#1e293b;
+  color:white;
+  font-size:15px;
+}
+
+input::placeholder{
+  color:#94a3b8;
+}
+
+input:focus,
+select:focus{
+  outline:none;
+  border:1px solid #38bdf8;
+}
+
+/* BUTTON */
+
+.btn{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.submit-btn{
+  background:#059669;
+  color:white;
+}
+
+.submit-btn:hover{
+  background:#047857;
+}
+
+.location-btn{
+  background:#7c3aed;
+  color:white;
+}
+
+.location-btn:hover{
+  background:#6d28d9;
+}
+
+.donate-btn{
+  background:#ea580c;
+  color:white;
+}
+
+.donate-btn:hover{
+  background:#c2410c;
+}
+
+/* LOCATION TEXT */
+
+#loc{
+  margin-top:15px;
+  color:#cbd5e1;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  body{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+  }
+
+  .topbar{
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+  <div class="logo">
+    <h1>🚨 FALAKATA</h1>
+    <p>Jono Suraksha System</p>
+  </div>
+
+  <div class="profile">
+    <h3>👤 User</h3>
+    <p id="userInfo">Logged in User</p>
+  </div>
+
+  <div class="menu">
+
+    <button>🏠 Dashboard</button>
+
+    <button>📂 Case Records</button>
+
+    <button>📍 Live Location</button>
+
+    <button>💰 Donation</button>
+
+    <button class="logout" onclick="logout()">
+      🚪 Logout
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+  <!-- TOPBAR -->
+
+  <div class="topbar">
+
+    <div>
+      <h1>Welcome Back 👋</h1>
+      <span>Falakata Jono Suraksha Dashboard</span>
+    </div>
+
+    <div>
+      📅 <span id="date"></span>
+    </div>
+
+  </div>
+
+
+  <!-- STATS -->
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Total Cases</h3>
+      <p>4</p>
+    </div>
+
+    <div class="card">
+      <h3>Active Members</h3>
+      <p>4</p>
+    </div>
+
+    <div class="card">
+      <h3>Emergency Alerts</h3>
+      <p>0</p>
+    </div>
+
+  </div>
+
+
+  <!-- CASE FORM -->
+
+  <div class="box">
+
+    <h2>📝 New Case Register</h2>
+
+    <input type="text" id="case_name" placeholder="Case Name">
+
+    <input type="date" id="case_date">
+
+    <select id="case_type">
+      <option>Missing</option>
+      <option>Theft</option>
+      <option>Emergency</option>
+    </select>
+
+    <input type="text" id="lead_name" placeholder="Lead Member Name">
+
+    <input type="file" id="file">
+
+    <input type="text" id="location" placeholder="Case Location">
+
+    <input type="datetime-local" id="datetime">
+
+    <button class="btn submit-btn" onclick="submitCase()">
+      Submit Case
+    </button>
+
+  </div>
+
+
+  <!-- LOCATION -->
+
+  <div class="box">
+
+    <h2>📍 Share Live Location</h2>
+
+    <button class="btn location-btn" onclick="getLocation()">
+      Get Current Location
+    </button>
+
+    <p id="loc"></p>
+
+  </div>
+
+
+  <!-- DONATION -->
+
+  <div class="box">
+
+    <h2>💰 Donation</h2>
+
+    <input type="number" placeholder="Enter Donation Amount">
+
+    <button class="btn donate-btn">
+      Donate Now
+    </button>
+
+  </div>
+
+</div>
+
+
+<script>
+
+document.getElementById("date").innerHTML =
+new Date().toLocaleDateString();
+
+</script>
+
+<script src="dashboard.js"></script>
+
+</body>
+>>>>>>> 1b232538aa8066ea8b568ed77578ab162826a7e2
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   margin: 0;
   font-family: 'Segoe UI';
@@ -66,4 +67,74 @@ button {
 
 button:hover {
   background: #dd2476;
+=======
+body {
+  margin: 0;
+  font-family: 'Segoe UI';
+  background: linear-gradient(135deg, #141e30, #243b55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* HOME */
+.home-container {
+  text-align: center;
+  color: white;
+}
+
+.btn-group button {
+  display: block;
+  margin: 10px auto;
+  padding: 15px;
+  width: 250px;
+  border: none;
+  border-radius: 8px;
+  background: #00c6ff;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-group button:hover {
+  background: #ff512f;
+  color: white;
+}
+
+/* FORM */
+.form-box {
+  width: 400px;
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+.form-box h2 {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #ff512f;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #dd2476;
+>>>>>>> 1b232538aa8066ea8b568ed77578ab162826a7e2
 }
