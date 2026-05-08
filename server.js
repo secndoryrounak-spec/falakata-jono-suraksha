@@ -175,7 +175,7 @@ db.connect((err) => {
 
   if (err) {
 
-    console.log("❌ DB Connection Failed:", err.message);
+    console.log("❌ DB Connection Failed:", err.);
 
   } else {
 
